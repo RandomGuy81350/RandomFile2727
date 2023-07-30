@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Password Verification</title>
+  <script>
+    function checkPassword() {
+      var inputText = document.getElementById("password").value;
+      if (inputText === "OwOManWoW") {
+        window.location.href = "https://file.io/4uiBUoxZr1Nr";
+      } else {
+        var errorMessage = document.getElementById("error-message");
+        errorMessage.textContent = "Wrong password, try again.";
+        setTimeout(function() {
+          errorMessage.textContent = "";
+        }, 2000);
+      }
+    }
+
+    function togglePasswordVisibility() {
+      var passwordInput = document.getElementById("password");
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+      } else {
+        passwordInput.type = "password";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Password Verification</h1>
+  <label for="password">Enter Password:</label>
+  <input type="password" id="password" name="password" />
+  <button onclick="togglePasswordVisibility()">Show Password</button>
+  <br />
+  <button onclick="checkPassword()">Submit</button>
+  <p id="error-message" style="color: red;"></p>
+</body>
+</html>
